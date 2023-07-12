@@ -2949,7 +2949,7 @@
       let bj_album_view = 0;
       function album_slide(index) {
         bj_album_position = bj_album_position + index;
-        if (bj_album_position > bj_album_Page) {
+        if (bj_album_position > bj_album_Page || bj_album_position < 0) {
           bj_album_position = 0;
         }
         bj_album_view = 476.8 * bj_album_position;
