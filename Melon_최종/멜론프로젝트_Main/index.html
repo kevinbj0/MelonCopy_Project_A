@@ -2696,7 +2696,7 @@
         </ul>
         <div class="mg_chart_fot">
             <div class="mg_chart_for1"><button>      <img
-              src="https://github.com/kevinbj0/MelonCopy_Project_A/blob/main/Melon_%EC%B5%9C%EC%A2%85/%EB%A9%9C%EB%A1%A0%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_Main/%EC%85%94%ED%94%8C%EB%93%A3%EA%B8%B0.png?raw=true"
+              src="./셔플듣기.png"
               style="height: 26px; width: 72px; "
             /></button>
             </div>
@@ -2893,12 +2893,12 @@
       let bj_name = document.querySelectorAll(".bj_li_name");
       let bj_cover_play = document.querySelectorAll(".bj_li_cover_play");
       function bj_cover_in(index) {
-        bj_name[index].style.display = "none";
-        bj_cover_play[index].style.display = "block";
+        bj_name[index].style.display = "none"; //이름 하단바 안보이게
+        bj_cover_play[index].style.display = "block"; //커버가 보이도록
       }
       function bj_cover_out(index) {
-        bj_name[index].style.display = "block";
-        bj_cover_play[index].style.display = "none";
+        bj_name[index].style.display = "block"; //이름 하단바 보이게
+        bj_cover_play[index].style.display = "none"; //커버가 안보이도록
       }
 
       //ㅡㅡㅡㅡㅡㅡㅡ이벤트 슬라이드 부분
@@ -2912,7 +2912,7 @@
       let bj_event_play = 0;
 
       function changeEvent() {
-        bj_event_position++;
+        bj_event_position++; 
         bj_event_play = 236 * bj_event_position;
         if (bj_event_position > bj_event_Max) {
           bj_event_position = 0;
@@ -2927,19 +2927,27 @@
         bj_event_button[bj_event_position].style.backgroundImage =
           "url('https://github.com/kevinbj0/front/blob/main/image_/%EC%9B%90_%EC%84%A0%ED%83%9D.png?raw=true')";
       }
+
+      // 버튼 클릭시
       function click_event(index) {
-        bj_event_position = index;
-        bj_event_play = 236 * bj_event_position;
+        bj_event_position = index; //버튼의 인덱스를 받아옴
+        bj_event_play = 236 * bj_event_position; //클릭한 버튼의 인덱스 -> 위치값으로 변환
         for (let i = 0; i <= bj_event_Max; i++) {
+          //슬라이드 이동
           bj_event_container[i].style.transform =
             "translateX(-" + bj_event_play + "px)";
+          // 모든 버튼 클릭상태 off
           bj_event_button[i].style.backgroundImage =
             "url('https://github.com/kevinbj0/front/blob/main/image_/%EC%9B%90_%EC%9D%BC%EB%B0%98.png?raw=true')";
         }
+        // 클릭한 버튼 클릭상태 on
         bj_event_button[bj_event_position].style.backgroundImage =
           "url('https://github.com/kevinbj0/front/blob/main/image_/%EC%9B%90_%EC%84%A0%ED%83%9D.png?raw=true')";
       }
+
       setInterval(changeEvent, 4000);
+
+
       //앨범 슬라이드
       let bj_album_container = document.querySelectorAll(".div1_album_image");
       let bj_album_button = document.querySelectorAll(".bj_album_contry");
@@ -2951,31 +2959,41 @@
       bj_album_button[0].style.color = "black";
       // 현재 슬라이드 위치
       let bj_album_view = 0;
+
+      //클릭시 앞뒤로 이동
       function album_slide(index) {
-        bj_album_position = bj_album_position + index;
+        bj_album_position = bj_album_position + index; //인덱스 +1 또는 -1 받아서 증감
         if (bj_album_position > bj_album_Page || bj_album_position < 0) {
+          //위치 초기화
           bj_album_position = 0;
         }
         bj_album_view = 476.8 * bj_album_position;
         for (let i = 0; i <= bj_album_Page; i++) {
+          // 슬라이드 이동
           bj_album_container[i].style.transform =
             "translateX(-" + bj_album_view + "px)";
           bj_album_button[i].style.color = "rgb(136, 136, 136)";
         }
+        //전체, 국내, 해외 파트중 현재 위치에 맞게 활성화
         bj_album_button[bj_album_position].style.color = "black";
+        //쪽수 표시
         bj_album_page.innerHTML =
           '<strong><h style="color: black">' +
           (1 + 3 * bj_album_position) +
           "</h>/9</strong>";
       }
+      //국내, 해외 등 항목 선택
       function album_contry(position) {
         bj_album_position = position;
+        //위치값을 받아와서 px단위로 변환
         bj_album_view = 476.8 * bj_album_position;
         for (let i = 0; i <= bj_album_Page; i++) {
+          //선택된 위치로 이동
           bj_album_container[i].style.transform =
             "translateX(-" + bj_album_view + "px)";
           bj_album_button[i].style.color = "rgb(136, 136, 136)";
         }
+        // 전체, 국내, 해외 등 활성화 + 쪽수 표시
         bj_album_button[bj_album_position].style.color = "black";
         bj_album_page.innerHTML =
           '<strong><h style="color: black">' +
