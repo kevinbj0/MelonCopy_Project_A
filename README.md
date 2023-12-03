@@ -9,7 +9,7 @@ Front-End 프로젝트
 ## 🕰️ 개발 기간
  * 2023.07. ~ 2023.07. (1주)
 
-## 게임화면
+## 구현화면
 
 <img src = "https://github.com/kevinbj0/image/blob/main/%EB%A9%9C%EB%A1%A0%EC%B9%B4%ED%94%BC.png?raw=true">
 
