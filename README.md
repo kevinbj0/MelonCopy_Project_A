@@ -2,6 +2,8 @@
 # Melon Copy
 Front-End 프로젝트
 
+Demo - https://kevinbj0.github.io/MelonCopy_Project_A/Melon_%EC%B5%9C%EC%A2%85/%EB%A9%9C%EB%A1%A0%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_Main/index.html
+
 ### 🖥️ 프로젝트 소개
 멜론에 있는 슬라이드와 같은 주요 기능들을 인터넷 라이브러리를 최대한 쓰지 않고 Script로만 구현하였습니다.
 <br>
